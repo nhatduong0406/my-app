@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<meta name="generator" content="FET-IUH-IOT Thuc hanh">
-<meta name="dcterms.created" content="T3,27/04 2020 10:08:23 GMT">
-<meta name="description" content="Nhom 3 IOT">
-<meta name="keywords" content="Internet of things,LoraWan,Raspberry 4">
-<link rel="stylesheet" href="style.css">
-<title> Website của những thiên tài  </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="FET-IUH-IOT Thuc hanh">
+    <meta name="dcterms.created" content="T3,27/04 2020 10:08:23 GMT">
+    <meta name="description" content="Nhom 3 IOT">
+    <meta name="keywords" content="Internet of things,LoraWan,Raspberry 4">
+    <link rel="stylesheet" href="./style.css">
+    <title> Website của những thiên tài  </title>
 </head>
 
 <body>
-            <h2 align=center> Hệ Thống Báo Động </h2>
-            <p align=center>
-               <font color="grey"><b>- Nhóm 3 -</b></font><br /></p>
-            <p align=center>
-               <font color="red"><b>Những thành viên đầy nhiệt huyết</b></font><br /></p>
-            <p align=center>1.Phạm Văn Trí-19492621</p>
-            <p align=center>2.Đặng Hữu Thái-19448521</p>
-            <p align=center>3.Dương Thuận Nhất-19439061</p>
-            <p align=center>4.Nguyễn Lễ Châu Tuấn-19474801</p>
-            <div align=center>
+    <div class="container--full">
+        <div class="container-1220">
+            <div class="introduce">
+                <h2 align=center> Hệ Thống Báo Động </h2>
+                <p align=center>
+                   <font color="grey"><b>- Nhóm 3 -</b></font><br /></p>
+                <p align=center>
+                   <font color="red"><b>Những thành viên đầy nhiệt huyết</b></font><br /></p>
+                <p align=center>1.Phạm Văn Trí-19492621</p>
+                <p align=center>2.Đặng Hữu Thái-19448521</p>
+                <p align=center>3.Dương Thuận Nhất-19439061</p>
+                <p align=center>4.Nguyễn Lễ Châu Tuấn-19474801</p>
+                <div align=center>
+                    <p>
+                      <font color="red"><b>Thực hành bài 9 IOT</b></font><br />
+                    </p>
                 <p>
-                  <font color="red"><b>Thực hành bài 9 IOT</b></font><br />
+                  <font color="green">Điều khiển RGB LED Stick </font><br />
+                  <button onclick="LED1_On()">Bật</button>
+                  <button onclick="LED1_Off()">Tắt</button>
                 </p>
-            <p>
-              <font color="green">Điều khiển RGB LED Stick </font><br />
-              <button onclick="LED1_On()">Bật</button>
-              <button onclick="LED1_Off()">Tắt</button>
+                <p>
+                   <font color="red"> DISTANCE </font>
+                </br>
+                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1724171/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
             </p>
-            <p>
-               <font color="red"> DISTANCE </font>
-            </br>
-            <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1724171/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
-        </p>
+            </div>
+                   
+            </div>
+        </div>
     </div>
-    <script>
+    
+    <script defer type="text/javascript">
         var url = "https://api.thingspeak.com/update?";
         var params_on = "api_key=W6E35TWN7HTPS3YC&field1=0";
         var params_off = "api_key=W6E35TWN7HTPS3YC&field1=1";
@@ -46,13 +56,13 @@
 
         function LED1_On() {
             xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;json");
             xhr.send(params_on);
         }
 
         function LED1_Off() {
             xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;json");
             xhr.send(params_off);
         }
     </script>
